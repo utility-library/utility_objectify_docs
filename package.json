@@ -1,0 +1,9 @@
+{
+  "name": "utility_framework",
+  "version": "1.0.0",
+  "author": "XenoS",
+  "license": "MIT",
+  "dependencies": {
+    "@overextended/oxmysql": "^1.0.2",
+  }
+}
