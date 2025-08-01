@@ -16,16 +16,16 @@ This section provides a high-level overview of what happens on the client and ho
 
 #### ✅ 1. Object Instantiation
 
-When an entity is rendered (`OnSpawn`), the library:
+When an entity is rendered ([#onspawn](../shared/hooks.md#onspawn "mention")), the library:
 
-* Looks up all scripts registered to the entity’s model (via the `@model` or `@plugin` decorators)
+* Looks up all scripts registered to the entity’s model (via the [#model-modelname-abstract](../shared/decorators.md#model-modelname-abstract "mention") or [#plugin-pluginname](../shared/decorators.md#plugin-pluginname "mention") decorators)
 * Creates a new class instance and binds it to the entity
-* Initializes the lifecycle: `OnAwake`, `OnSpawn`, `AfterSpawn`
+* Initializes the lifecycle: [#onawake](../shared/hooks.md#onawake "mention"), [#onspawn](../shared/hooks.md#onspawn "mention"), [#afterspawn](../shared/hooks.md#afterspawn "mention")
 
-#### ❌ When an entity is unrendered (`OnDestroy`):
+#### ❌ When an entity is unrendered ([#ondestroy](../shared/hooks.md#ondestroy "mention")):
 
 * All bound script instances are destroyed
-* The lifecycle method `OnDestroy` is called
+* The lifecycle method [#ondestroy](../shared/hooks.md#ondestroy "mention") is called
 * Memory and state tracking is cleared
 
 ***

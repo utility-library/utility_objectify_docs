@@ -17,7 +17,7 @@ When a class extending `BaseEntity` is instantiated:
 * Plugins are instantiated and attached to the main object.
 
 ✅ 2. **Plugin Instantiation**\
-If the entity class has plugins (via `@plugin`), those are automatically initialized and linked to the main instance.
+If the entity class has plugins (via [#plugin-pluginname](../shared/decorators.md#plugin-pluginname "mention")), those are automatically initialized and linked to the main instance.
 
 ❌ The server **does not react** to object rendering or visibility like the client. It owns the logic and data, while the client reacts to what’s visible.
 

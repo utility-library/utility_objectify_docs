@@ -10,7 +10,7 @@ This page breaks down how the client framework operates and how you can use it t
 
 All object scripts on the client extend the `BaseEntity` class. This class provides:
 
-* Entity lifecycle hooks (`OnSpawn`, `OnDestroy`, etc.)
+* Entity lifecycle hooks ([#onspawn](../shared/hooks.md#onspawn "mention"), [#ondestroy](../shared/hooks.md#ondestroy "mention"), etc.)
 * RPC access to the server (`self.server`)
 * Plugin management (`self.plugins`)
 * State listening via [#state-key-value](../shared/decorators.md#state-key-value "mention")
@@ -48,18 +48,18 @@ RegisterCustomHook("OnStateChange", {
 })
 ```
 
-This will be called only if the currently spawning/destroying entity has a method called `OnStateChange` \
+This will be called only if the currently spawning/destroying entity has a method called `OnStateChange`\
 The `call` parameter is a function to invoke the original entity method, triggering the hook call.
 
 Custom hooks can include:
 
-| Hook Method  | Purpose                                                                                                  |
-| ------------ | -------------------------------------------------------------------------------------------------------- |
-| `exec`       | Called when _**ANY**_ script instance is created (_also when it doesnt have the specified method name_)  |
-| `OnAwake`    | Exactly like [#onawake](../shared/hooks.md#onawake "mention")                                            |
-| `OnSpawn`    | Exactly like [#onspawn](../shared/hooks.md#onspawn "mention")                                            |
-| `AfterSpawn` | Exactly like [#afterspawn](../shared/hooks.md#afterspawn "mention")                                      |
-| `OnDestroy`  | Exactly like[#ondestroy](../shared/hooks.md#ondestroy "mention")                                         |
+| Hook Method  | Purpose                                                                                                 |
+| ------------ | ------------------------------------------------------------------------------------------------------- |
+| `exec`       | Called when _**ANY**_ script instance is created (_also when it doesnt have the specified method name_) |
+| `OnAwake`    | Exactly like [#onawake](../shared/hooks.md#onawake "mention")                                           |
+| `OnSpawn`    | Exactly like [#onspawn](../shared/hooks.md#onspawn "mention")                                           |
+| `AfterSpawn` | Exactly like [#afterspawn](../shared/hooks.md#afterspawn "mention")                                     |
+| `OnDestroy`  | Exactly like[#ondestroy](../shared/hooks.md#ondestroy "mention")                                        |
 
 Then in your entity class just add the hook method
 
@@ -89,11 +89,11 @@ To help with shared or conditional logic, **Utility Objectify** provides two con
 
 ## 🔎 Framework Functions
 
-### <mark style="color:$info;">SetRPCNamespace(namespace)</mark>
+### <mark style="color:purple;">SetRPCNamespace(namespace)</mark>
 
 Change the prefix used internally for RPC event names\
-by default is `Config.Namespace` or the `current resource name` followed by a colon (:)&#x20;
+by default is `Config.Namespace` or the `current resource name` followed by a colon (:)
 
-### <mark style="color:$info;">Server.DisableTimeoutForNext()</mark>
+### <mark style="color:purple;">Server.DisableTimeoutForNext()</mark>
 
 Disable the 5s timeout on callbacks for the next RPC call
