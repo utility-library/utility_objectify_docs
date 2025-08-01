@@ -43,20 +43,7 @@ If the entity class has plugins (via `@plugin`), those are automatically initial
 
 ### 📦 Object Registry: `Entities`
 
-All live object instances on the server are tracked in a singleton class:
-
-```lua
-Entities = new EntitiesSingleton()
-```
-
-Functions available:
-
-* `Entities:add(entity)` — <mark style="color:$warning;">`INTERNAL`</mark> Called automatically
-* `Entities:remove(entity)` — <mark style="color:$warning;">`INTERNAL`</mark> Called on destruction
-* `Entities:get(id)` — Fetch by `uNetId`
-* `Entities:getBy(key, value)` — Fetch by field
-
-This allows you to manage and track all server-side logic entities efficiently.
+[#entities-singleton](framework.md#entities-singleton "mention")
 
 ***
 
@@ -64,6 +51,6 @@ This allows you to manage and track all server-side logic entities efficiently.
 
 The following features are currently **client-only** and not applicable to server-side code:
 
-* `@state` — State change listeners only run client-side
-* `@event` — Event bindings are client-focused
-* `OnRegister` / `OnUnregister` — Only run with temporary client objects
+* [#state-key-value](../shared/decorators.md#state-key-value "mention") — State change listeners only run client-side
+* [#event-eventname-ignorerendering](../shared/decorators.md#event-eventname-ignorerendering "mention") — Event bindings are client-focused
+* [#onregister](../shared/hooks.md#onregister "mention")/[#onunregister](../shared/hooks.md#onunregister "mention") — Only run with temporary client objects

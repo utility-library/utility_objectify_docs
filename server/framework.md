@@ -10,12 +10,12 @@ This page details how the server-side framework works and how to write server-si
 
 All server-side object scripts must **extend `BaseEntity`**. This class provides:
 
-* Constructor with coords (vec3), rotation? (vec3) and options? (table)
+* Constructor with coords (vec3) rotation? (vec3) and options? (table)
 * Entity creation, automatically called if passing coords in the constructor (`:create`)
 * Entity deletion (`:destroy`)
-* RPC access to the client (`self.client`) <mark style="color:$danger;">`NOT IMPLEMENTED`</mark>
+* RPC access to the client (`self.client`) `NOT IMPLEMENTED`
 * Plugin management (`self.plugins`)
-* Lifecycle hooks like `OnSpawn`, `OnDestroy`, etc.
+* Lifecycle hooks like [#onspawn](../shared/hooks.md#onspawn "mention"),[#ondestroy](../shared/hooks.md#ondestroy "mention") etc.
 
 #### Example
 
@@ -37,7 +37,7 @@ Functions provided by `BaseEntity`
 | ---------------------- | ------------------------------------------------------------------------------------------------------------- |
 | `self:create(coords)`  | Spawns a networked object in the world, automatically called when passing coords when instantiating the class |
 | `self:destroy()`       | Deletes the entity and removes the instance                                                                   |
-| `self:init(id, state)` | <mark style="color:$warning;">`INTERNAL`</mark> Initializes lifecycle methods on existing entity              |
+| `self:init(id, state)` | `INTERNAL` Initializes lifecycle methods on existing entity                                                   |
 
 ***
 

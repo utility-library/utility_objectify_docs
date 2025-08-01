@@ -6,7 +6,7 @@
 {% tab title="Client side" %}
 Every `BaseEntity` instance gets a `self.server` property that acts as a proxy to server-side methods.
 
-#### Example:
+**Example:**
 
 ```lua
 self.server:OpenLid()
@@ -29,7 +29,7 @@ Currently not implemented
 
 Every `BaseEntity` instance gets a `self.client` property that acts as a proxy to client-side methods.
 
-#### Example:
+**Example:**
 
 ```lua
 self.client:OpenLid()
@@ -50,7 +50,7 @@ RPC methods must be defined with [#rpc-return](decorators.md#rpc-return "mention
 
 {% tabs %}
 {% tab title="Client side" %}
-You can also call **non-object-based RPCs** from the client using the global **Server** table. \
+You can also call **non-object-based RPCs** from the client using the global **Server** table.\
 These are typically utility methods not bound to a specific entity.
 
 ```lua
@@ -61,7 +61,7 @@ They can still be a callback or fire-and-forget style like entity based RPCs
 {% endtab %}
 
 {% tab title="Server side" %}
-You can also call **non-object-based RPCs** from the server using the global **Client** table. \
+You can also call **non-object-based RPCs** from the server using the global **Client** table.\
 These are typically utility methods not bound to a specific entity.
 
 ```lua
@@ -80,7 +80,7 @@ id can also be -1 to call the method on all clients
 
 ## 🛡 RPC Internals
 
-When you use `@rpc`, the system registers:
+When you use [#rpc-return](decorators.md#rpc-return "mention"), the system registers:
 
 * An **event handler** with the method name under your resource namespace
 * If used inside a class, a **entity wide** **dispatcher** that finds the correct entity instance by ID
@@ -90,7 +90,7 @@ When you use `@rpc`, the system registers:
 
 #### Example using a server rpc called from the client
 
-<mark style="color:$danger;">Server</mark> define the rpc:
+<mark style="color:red;">Server</mark> define the rpc:
 
 ```lua
 @model("my_model")
@@ -102,7 +102,7 @@ class MyEntity extends BaseEntity {
 }
 ```
 
-<mark style="color:$primary;">Client</mark> calls the RPC from the spawned entity:
+<mark style="color:blue;">Client</mark> calls the RPC from the spawned entity:
 
 ```lua
 @model("my_model")
@@ -125,7 +125,7 @@ And then will be converted to:
 TriggerServerEvent("namespace:MyEntity.DoThing", entityId, ...)
 ```
 
-<mark style="color:$danger;">Server</mark> resolves:
+<mark style="color:red;">Server</mark> resolves:
 
 1. Entity instance via `Entities:get(entityId)`
 2. Verifies method exists and is exposed
@@ -139,7 +139,7 @@ TriggerServerEvent("namespace:MyEntity.DoThing", entityId, ...)
 The framework includes automatic safeguards to prevent clients/server from calling methods that:
 
 * Don’t exist on the class
-* Aren’t registered via `@rpc`
+* Aren’t registered via [#rpc-return](decorators.md#rpc-return "mention")
 * Target the wrong type of class (e.g. wrong plugin or base class)
 
 This keeps your RPC layer safe and predictable.

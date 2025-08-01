@@ -1,8 +1,8 @@
 # Decorators
 
-### <mark style="color:$info;">@model(modelName, abstract?)</mark>
+### <mark style="color:purple;">@model(modelName, abstract?)</mark>
 
-<mark style="color:$primary;">`CLIENT`</mark> <mark style="color:$danger;">`SERVER`</mark>
+<mark style="color:blue;">`CLIENT`</mark> <mark style="color:red;">`SERVER`</mark>
 
 Register the following class as [#main-script](../client/object-management.md#main-script "mention") of the specified model
 
@@ -24,8 +24,8 @@ When an entity with one of these models is rendered, an instance of the class wi
 The abstract parameter is only required for the server
 {% endhint %}
 
-Setting `abstract = true` allows for the creation of abstract objects. \
-You can define a custom model name, and `utility_objectify` will generate both a new model and an object. This feature enables the creation of objects with custom models, allowing clients to add logic while benefiting from complete entity lifecycle management. \
+Setting `abstract = true` allows for the creation of abstract objects.\
+You can define a custom model name, and `utility_objectify` will generate both a new model and an object. This feature enables the creation of objects with custom models, allowing clients to add logic while benefiting from complete entity lifecycle management.\
 For example, you can create an object for an NPC spawning zone and manage its states or render/unrender capabilities without depending on a physical game model.
 
 {% hint style="info" %}
@@ -34,9 +34,9 @@ To incorporate client logic, register the main script as a standard model, the h
 
 ***
 
-### <mark style="color:$info;">@plugin(pluginName)</mark>
+### <mark style="color:purple;">@plugin(pluginName)</mark>
 
-<mark style="color:$primary;">`CLIENT`</mark> <mark style="color:$danger;">`SERVER`</mark>
+<mark style="color:blue;">`CLIENT`</mark> <mark style="color:red;">`SERVER`</mark>
 
 Registers a [#plugin-script](../client/object-management.md#plugin-script "mention") to be loaded alongside a main class. Plugins allow you to modularize logic.
 
@@ -46,11 +46,11 @@ Registers a [#plugin-script](../client/object-management.md#plugin-script "menti
 
 ***
 
-### <mark style="color:$info;">@state(key, value?)</mark>
+### <mark style="color:purple;">@state(key, value?)</mark>
 
-<mark style="color:$primary;">`CLIENT`</mark>
+<mark style="color:blue;">`CLIENT`</mark>
 
-Watches for changes to a specific `self.state` key on the object. \
+Watches for changes to a specific `self.state` key on the object.\
 Executes the decorated method whenever the key changes.
 
 ```lua
@@ -75,16 +75,16 @@ class Crate extends BaseEntity {
 }
 ```
 
-The load parameter is a boolean indicating if that function was called from a state change or from the initial state loading, this can be useful to reuse and differentiate logic/code&#x20;
+The load parameter is a boolean indicating if that function was called from a state change or from the initial state loading, this can be useful to reuse and differentiate logic/code
 
 `load`: **true** = the function was called why the entity loaded/rendered and so the value as not changed\
 `load`: **false** = the function was called by a state change
 
 ***
 
-### <mark style="color:$info;">@event("eventName", ignoreRendering?)</mark>
+### <mark style="color:purple;">@event("eventName", ignoreRendering?)</mark>
 
-<mark style="color:$primary;">`CLIENT`</mark>
+<mark style="color:blue;">`CLIENT`</mark>
 
 Registers a listener for a net event and binds it to the object.\
 If `ignoreRendering` is not set, the event handler will only run when the object is fully loaded[#areobjectscriptsfullyloaded-obj](../client/object-management.md#areobjectscriptsfullyloaded-obj "mention")
@@ -125,9 +125,9 @@ class Crate extends BaseEntity {
 
 ***
 
-### <mark style="color:$info;">@rpc(return?)</mark>
+### <mark style="color:purple;">@rpc(return?)</mark>
 
-<mark style="color:$primary;">`CLIENT`</mark> <mark style="color:$danger;">`SERVER`</mark>
+<mark style="color:blue;">`CLIENT`</mark> <mark style="color:red;">`SERVER`</mark>
 
 {% hint style="danger" %}
 Currently, entity rpcs are not implemented on the client side, only function ones
@@ -171,4 +171,3 @@ function IsFreeAiming(self)
     return IsPlayerFreeAiming(PlayerId())
 end
 ```
-

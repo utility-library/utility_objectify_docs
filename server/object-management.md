@@ -4,7 +4,7 @@
 
 On the server, object scripts are **instantiated manually or programmatically** using Lua class instantiation. These scripts are tightly integrated with **networked entities** created via `UtilityNet`.
 
-#### When You Create a Server Entity
+#### <mark style="color:purple;">When You Create a Server Entity</mark>
 
 1. Class extending `BaseEntity` is instantiated (e.g. `new MyEntity(coords?, rotation?, options?)`)
 2. `UtilityNet.CreateEntity(...)` is called under the hood.
@@ -16,7 +16,7 @@ On the server, object scripts are **instantiated manually or programmatically** 
 constructor → create() [Only if coords is passed] → init() → OnAwake → OnSpawn → AfterSpawn
 ```
 
-#### When You Destroy an Entity
+#### <mark style="color:purple;">When You Destroy an Entity</mark>
 
 Calling `self:destroy()` on a server entity will:
 

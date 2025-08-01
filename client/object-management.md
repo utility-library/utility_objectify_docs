@@ -14,7 +14,7 @@ When entities are spawned or unspawned, the framework dynamically creates or des
 
 ## 🧠 How It Works
 
-#### OnRender
+#### <mark style="color:purple;">OnRender</mark>
 
 When an entity becomes visible to the player:
 
@@ -23,7 +23,7 @@ When an entity becomes visible to the player:
 3. Lifecycle methods ([#onawake](../shared/hooks.md#onawake "mention"), [#onspawn](../shared/hooks.md#onspawn "mention"), [#afterspawn](../shared/hooks.md#afterspawn "mention")) are called.
 4. The instance is stored and tracked.
 
-#### OnUnrender
+#### <mark style="color:purple;">OnUnrender</mark>
 
 When the entity is no longer visible:
 
@@ -64,27 +64,27 @@ can interact with the temporary instance properties, as they will be injected be
 
 ## 🔎 Object Management Functions
 
-### <mark style="color:$info;">IsObjectScriptRegistered(model, name)</mark>
+### <mark style="color:purple;">IsObjectScriptRegistered(model, name)</mark>
 
 Checks if a specific model as a script registered to im, can be useful if a plugin needs another plugin to work properly
 
-### <mark style="color:$info;">RegisterCustomHook(hookMethod, hookData)</mark>
+### <mark style="color:purple;">RegisterCustomHook(hookMethod, hookData)</mark>
 
-See [#custom-hook-system](../shared/hooks.md#custom-hook-system "mention")
+See [#custom-hook-system](framework.md#custom-hook-system "mention")
 
-### <mark style="color:$info;">GetObjectScriptInstance(obj, name, nocheck?)</mark>
+### <mark style="color:purple;">GetObjectScriptInstance(obj, name, nocheck?)</mark>
 
 Fetch a specific script instance by name from an object.\
-All main scripts are exposed as `main`&#x20;
+All main scripts are exposed as `main`
 
 * `nocheck = true` skips rendering checks.
 
-### <mark style="color:$info;">GetExternalObjectScriptStatic(model, name)</mark>
+### <mark style="color:purple;">GetExternalObjectScriptStatic(model, name)</mark>
 
 Returns the raw script table (class) without creating an instance.
 
 > ⚠️ This is unsafe for live operations, use for inspection only.
 
-### <mark style="color:$info;">AreObjectScriptsFullyLoaded(obj)</mark>
+### <mark style="color:purple;">AreObjectScriptsFullyLoaded(obj)</mark>
 
 Returns `true` if all scripts have been fully created and attached to the object.
