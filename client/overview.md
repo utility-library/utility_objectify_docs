@@ -48,11 +48,9 @@ When an entity is rendered ([#onspawn](../shared/hooks.md#onspawn "mention")), t
 
 ***
 
-### 🔄 State Synchronization
+### 🔄 State Change Handling
 
 [#state-key-value](../shared/decorators.md#state-key-value "mention")
-
-***
 
 ### 📣 Event Handling
 

@@ -48,7 +48,7 @@ Registers a [#plugin-script](../client/object-management.md#plugin-script "menti
 
 ### <mark style="color:purple;">@state(key, value?)</mark>
 
-<mark style="color:blue;">`CLIENT`</mark>
+<mark style="color:blue;">`CLIENT`</mark> <mark style="color:red;">`SERVER`</mark>
 
 Watches for changes to a specific `self.state` key on the object.\
 Executes the decorated method whenever the key changes.
@@ -84,7 +84,7 @@ The load parameter is a boolean indicating if that function was called from a st
 
 ### <mark style="color:purple;">@event("eventName", ignoreRendering?)</mark>
 
-<mark style="color:blue;">`CLIENT`</mark>
+<mark style="color:blue;">`CLIENT`</mark> <mark style="color:red;">`SERVER`</mark>
 
 Registers a listener for a net event and binds it to the object.\
 If `ignoreRendering` is not set, the event handler will only run when the object is fully loaded[#areobjectscriptsfullyloaded-obj](../client/object-management.md#areobjectscriptsfullyloaded-obj "mention")

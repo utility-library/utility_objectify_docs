@@ -41,6 +41,16 @@ If the entity class has plugins (via [#plugin-pluginname](../shared/decorators.m
 
 ***
 
+### 🔄 State Change Handling
+
+[#state-key-value](../shared/decorators.md#state-key-value "mention")
+
+### 📣 Event Handling
+
+[#event-eventname-ignorerendering](../shared/decorators.md#event-eventname-ignorerendering "mention")
+
+***
+
 ### 📦 Object Registry: `Entities`
 
 [#entities-singleton](framework.md#entities-singleton "mention")
@@ -51,6 +61,4 @@ If the entity class has plugins (via [#plugin-pluginname](../shared/decorators.m
 
 The following features are currently **client-only** and not applicable to server-side code:
 
-* [#state-key-value](../shared/decorators.md#state-key-value "mention") — State change listeners only run client-side
-* [#event-eventname-ignorerendering](../shared/decorators.md#event-eventname-ignorerendering "mention") — Event bindings are client-focused
 * [#onregister](../shared/hooks.md#onregister "mention")/[#onunregister](../shared/hooks.md#onunregister "mention") — Only run with temporary client objects

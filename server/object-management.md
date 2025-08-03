@@ -68,7 +68,7 @@ All object creation and destruction is fully controlled by your server-side logi
 Utility Objectify relies on `UtilityNet` for:
 
 * Creating synced entities
-* Managing state (`self.state:set(...)`)
+* Managing state (`self.state`)
 * Getting/setting entity IDs (`self.id`)
 * Deleting objects
 * Resolving object existence (`UtilityNet.DoesUNetIdExist(id)`)
