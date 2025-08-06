@@ -29,7 +29,7 @@ Every main script instance has:
 
 ## 🔌Plugin script
 
-Every class (that can also extend `BaseEntity`) registered with the [#plugin-pluginname](decorators.md#plugin-pluginname "mention") decorator on a main script is treated as a plugin script.\
+Every class that extend `BaseEntity` registered with the [#plugin-pluginname](decorators.md#plugin-pluginname "mention") decorator on a main script is treated as a plugin script.\
 Plugin scripts are useful to modularize code/logic attaching only specific plugins and so making everything more robust and modular.
 
 \
