@@ -20,14 +20,16 @@ When an entity becomes visible to the player:
 
 1. Its model is checked against registered scripts.
 2. A new instance of the class extending `BaseEntity` is created for each script (`main` and any plugins).
-3. Lifecycle methods ([#onawake](../shared/hooks.md#onawake "mention"), [#onspawn](../shared/hooks.md#onspawn "mention"), [#afterspawn](../shared/hooks.md#afterspawn "mention")) are called.
-4. The instance is stored and tracked.
+3. Is added to the global [#entities-singleton](../shared/entities-singleton.md#entities-singleton "mention") list.
+4. Lifecycle methods ([#onawake](../shared/hooks.md#onawake "mention"), [#onspawn](../shared/hooks.md#onspawn "mention"), [#afterspawn](../shared/hooks.md#afterspawn "mention")) are called.
+5. The instance is stored and tracked.
 
 #### <mark style="color:purple;">OnUnrender</mark>
 
 When the entity is no longer visible:
 
 * [#ondestroy](../shared/hooks.md#ondestroy "mention") is called on each script.
+* It remove itself from the [#entities-singleton](../shared/entities-singleton.md#entities-singleton "mention") list
 * All associated script instances are destroyed.
 * Object memory is freed.
 

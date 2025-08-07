@@ -53,7 +53,7 @@ If the entity class has plugins (via [#plugin-pluginname](../shared/decorators.m
 
 ### 📦 Object Registry: `Entities`
 
-[#entities-singleton](framework.md#entities-singleton "mention")
+[entities-singleton.md](../shared/entities-singleton.md "mention")
 
 ***
 

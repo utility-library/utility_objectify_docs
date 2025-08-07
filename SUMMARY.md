@@ -20,6 +20,7 @@
 
 ## Shared
 
+* [Entities Singleton](shared/entities-singleton.md)
 * [Decorators](shared/decorators.md)
 * [Hooks](shared/hooks.md)
 * [RPC](shared/rpc.md)

@@ -58,6 +58,12 @@ When an entity is rendered ([#onspawn](../shared/hooks.md#onspawn "mention")), t
 
 ***
 
+### 📦 Object Registry: `Entities`
+
+[entities-singleton.md](../shared/entities-singleton.md "mention")
+
+***
+
 ### 🛠 Utility Functions
 
 [#functions](framework.md#functions "mention")
