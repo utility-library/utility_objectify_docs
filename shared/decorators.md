@@ -129,10 +129,6 @@ class Crate extends BaseEntity {
 
 <mark style="color:blue;">`CLIENT`</mark> <mark style="color:red;">`SERVER`</mark>
 
-{% hint style="danger" %}
-Currently, entity rpcs are not implemented on the client side, only function ones
-{% endhint %}
-
 Marks a function as callable from the **server** side.\
 If the function uses the `return` keyword or the `return` argument is set to **true**,\
 it will register a callback and return the value to the caller.
@@ -158,10 +154,6 @@ class Crate extends BaseEntity {
     end
 }
 ```
-
-{% hint style="success" %}
-This is already implemented
-{% endhint %}
 
 this decorator can be used also on normal functions (not entity)
 

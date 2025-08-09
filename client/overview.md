@@ -69,12 +69,3 @@ When an entity is rendered ([#onspawn](../shared/hooks.md#onspawn "mention")), t
 [#functions](framework.md#functions "mention")
 
 [#functions](object-management.md#functions "mention")
-
-***
-
-### 🧪 Debug Mode
-
-If `DevModeStatus` is enabled, object script instances can be visualized while aiming:
-
-* Shows all registered scripts for an entity
-* Drawn in 3D using `DrawText3Ds`

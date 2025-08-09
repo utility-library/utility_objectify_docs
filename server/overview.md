@@ -57,8 +57,8 @@ If the entity class has plugins (via [#plugin-pluginname](../shared/decorators.m
 
 ***
 
-### 🚫 Currently Not Supported on Server
+### 🚫 Not Supported on Server
 
-The following features are currently **client-only** and not applicable to server-side code:
+The following features are **client-only** and not applicable to server-side code:
 
 * [#onregister](../shared/hooks.md#onregister "mention")/[#onunregister](../shared/hooks.md#onunregister "mention") — Only run with temporary client objects

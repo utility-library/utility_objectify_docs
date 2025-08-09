@@ -23,17 +23,13 @@ RPC methods must be defined with [#rpc-return](decorators.md#rpc-return "mention
 {% endtab %}
 
 {% tab title="Server side" %}
-{% hint style="danger" %}
-Currently not implemented
-{% endhint %}
-
 Every `BaseEntity` instance gets a `self.client` property that acts as a proxy to client-side methods.
 
 **Example:**
 
 ```lua
-self.client:OpenLid()
-self.client.plugins.lootable:GiveLoot(playerId)
+self.client:OpenLid(clientId)
+self.client.plugins.lootable:GiveLoot(clientId, playerId)
 ```
 
 Internally, metatables route calls based on:
@@ -65,13 +61,13 @@ You can also call **non-object-based RPCs** from the server using the global **C
 These are typically utility methods not bound to a specific entity.
 
 ```lua
-local data = Client.GetPlayerStats(id, ...)
+local data = Client.GetPlayerStats(clientId, ...)
 ```
 
 They can still be a callback or fire-and-forget style like entity based RPCs
 
 {% hint style="info" %}
-id can also be -1 to call the method on all clients
+clientId can also be -1 to call the method on all clients
 {% endhint %}
 {% endtab %}
 {% endtabs %}

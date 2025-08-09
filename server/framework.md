@@ -13,7 +13,7 @@ All server-side object scripts must **extend `BaseEntity`**. This class provides
 * Constructor with coords (vec3) rotation? (vec3) and options? (table)
 * Entity creation, automatically called if passing coords in the constructor (`:create`)
 * Entity deletion (`:destroy`)
-* RPC access to the client (`self.client`) <mark style="color:red;">`NOT IMPLEMENTED`</mark>
+* RPC access to the client (`self.client`)
 * Plugin management (`self.plugins`)
 * Lifecycle hooks like [#onspawn](../shared/hooks.md#onspawn "mention"),[#ondestroy](../shared/hooks.md#ondestroy "mention") etc.
 

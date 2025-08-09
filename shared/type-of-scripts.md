@@ -18,12 +18,12 @@ Every main script instance has:
 {% endtab %}
 
 {% tab title="Server side" %}
-| Name                                                            | Description                                                                       |
-| --------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `self.id`                                                       | The uNetId (UtilityNet id) of the current entity                                  |
-| `self.state`                                                    | The object state bag, read-only (client)                                          |
-| `self.plugins`                                                  | <p>A table with every plugin instance<br><code>[scriptName] = instance</code></p> |
-| `self.client` <mark style="color:red;">`NOT IMPLEMENTED`</mark> | Used to call client-side entity RPC functions                                     |
+| Name           | Description                                                                       |
+| -------------- | --------------------------------------------------------------------------------- |
+| `self.id`      | The uNetId (UtilityNet id) of the current entity                                  |
+| `self.state`   | The object state bag, read-only (client)                                          |
+| `self.plugins` | <p>A table with every plugin instance<br><code>[scriptName] = instance</code></p> |
+| `self.client`  | Used to call client-side entity RPC functions                                     |
 {% endtab %}
 {% endtabs %}
 
