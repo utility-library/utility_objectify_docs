@@ -130,7 +130,7 @@ class Crate extends BaseEntity {
 <mark style="color:blue;">`CLIENT`</mark> <mark style="color:red;">`SERVER`</mark>
 
 Marks a function as callable from the **server** side.\
-If the function uses the `return` keyword or the `return` argument is set to **true**,\
+If the function uses the lua `return` keyword or the `return` argument is set to **true**,\
 it will register a callback and return the value to the caller.
 
 ```lua
@@ -163,3 +163,17 @@ function IsFreeAiming(self)
     return IsPlayerFreeAiming(PlayerId())
 end
 ```
+
+### <mark style="color:purple;">@srpc(return?)</mark>
+
+<mark style="color:red;">`SERVER`</mark>
+
+Same as [#rpc-return](decorators.md#rpc-return "mention") but register only if `IsServer` is true,\
+useful when writing shared code and you want to register the RPC only on the server without doing manual if checks
+
+### <mark style="color:purple;">@crpc(return?)</mark>
+
+<mark style="color:blue;">`CLIENT`</mark>
+
+Same as [#rpc-return](decorators.md#rpc-return "mention") but register only if `IsClient` is true,\
+useful when writing shared code and you want to register the RPC only on the client without doing manual if checks
