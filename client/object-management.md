@@ -56,7 +56,12 @@ This ensures that [#onregister](../shared/hooks.md#onregister "mention") can pre
 #### [#onregister](../shared/hooks.md#onregister "mention") and [#onunregister](../shared/hooks.md#onunregister "mention")
 
 can interact only with the **temporary instance properties**, not real instance runtime changed properties.\
-have access only to `self.id` and `self.state`
+have access only to:
+
+| Name         | Description                                      |
+| ------------ | ------------------------------------------------ |
+| `self.id`    | The uNetId (UtilityNet id) of the current entity |
+| `self.state` | The object state bag, read-only (client)         |
 
 #### All other hooks ([#onspawn](../shared/hooks.md#onspawn "mention"), [#ondestroy](../shared/hooks.md#ondestroy "mention"), etc...)
 

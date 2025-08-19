@@ -4,22 +4,32 @@ Utility Objectify uses **hooks** to define and control the lifecycle of object s
 
 ***
 
-### <mark style="color:purple;">OnRegister</mark>
+### <mark style="color:purple;">OnRegister(coords, rotation)</mark>
 
 <mark style="color:blue;">`CLIENT`</mark>
 
 Triggered when an entity is registered (even if not rendered), this can be used for purposes such as blip creation.\
-At this stage of execution, the entity and classes instances do not yet exist.\
-see [#temp-object-properties](../client/object-management.md#temp-object-properties "mention") for more information
+At this stage of execution, the entity and classes instances do not yet exist and so any `UtilityNet.` function will not work as expected.
 
-### <mark style="color:purple;">OnUnregister</mark>
+The first and second parameters are the `coords` and `rotation` of the entity
+
+{% hint style="info" %}
+can access only [#temp-object-properties](../client/object-management.md#temp-object-properties "mention")
+{% endhint %}
+
+### <mark style="color:purple;">OnUnregister(coords, rotation)</mark>
 
 <mark style="color:blue;">`CLIENT`</mark>
 
 Triggered when an entity is about to be unregistered or removed from the system.\
 Utilize this hook to execute any necessary cleanup of resources or de-initialization processes.\
-This ensures that no residual data or active references remain that could lead to memory leaks or unexpected behavior.\
-OnUnregister can access only [#temp-object-properties](../client/object-management.md#temp-object-properties "mention")!
+This ensures that no residual data or active references remain that could lead to memory leaks or unexpected behavior.
+
+The first and second parameters are the `coords` and `rotation` of the entity
+
+{% hint style="info" %}
+can access only [#temp-object-properties](../client/object-management.md#temp-object-properties "mention")
+{% endhint %}
 
 ### <mark style="color:purple;">OnAwake</mark>
 
@@ -60,11 +70,11 @@ Provides the key and value of the changed state as arguments
 
 ### 🧰 Hook Execution Order
 
-1. `OnRegister` <mark style="color:blue;">`CLIENT ONLY`</mark>
+1. ~~`OnRegister`~~ <mark style="color:blue;">`CLIENT ONLY`</mark>
 2. `OnAwake`
 3. `OnSpawn`
 4. `AfterSpawn`
 5. `OnDestroy` (on unrender or deletion)
-6. `OnUnregister` <mark style="color:blue;">`CLIENT ONLY`</mark>
+6. ~~`OnUnregister`~~ <mark style="color:blue;">`CLIENT ONLY`</mark>
 
 Plugins follow the same order but are initialized after the main script.
