@@ -2,22 +2,27 @@
 
 ### 🧠 Entities Singleton
 
-All live entity instances are tracked in the `Entities` singleton.
+<mark style="color:blue;">`CLIENT`</mark> for an object to be available in the entities list, it must be rendered.\
+<mark style="color:red;">`SERVER`</mark> always fully populated, allow to access or manipulate any object, no matter where it is in the world.
 
-```lua
-Entities = new EntitiesSingleton()
-```
+All live entity instances are tracked in the `Entities` singleton.\
+Each object is uniquely identified by its `uNetId`
 
 #### Methods provided
 
-| Function                        | Description                                                                                                        |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `Entities:get(id)`              | Fetch a object instance from its uNetId                                                                            |
-| `Entities:getBy(key, value)`    | Find an instance by a custom field, value can also be a function working as a filter                               |
-| `Entities:getAllBy(key, value)` | Returns a table containing all instances that respect the filter, value can also be a function working as a filter |
-| `Entities:createByName(name)`   | Instantiate a new object of a class with that name                                                                 |
+| Function                                                             | Description                                                                                                        |
+| -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| <mark style="color:$warning;">`Entities:get(id)`</mark>              | Fetch a object instance from its uNetId                                                                            |
+| <mark style="color:$warning;">`Entities:getBy(key, value)`</mark>    | Find an instance by a custom field, value can also be a function working as a filter                               |
+| <mark style="color:$warning;">`Entities:getAllBy(key, value)`</mark> | Returns a table containing all instances that respect the filter, value can also be a function working as a filter |
+| <mark style="color:$primary;">`Entities:createByName(name)`</mark>   | Instantiate a new object of a class with that name                                                                 |
 
 Example:
+
+```lua
+local obj = Entities:get(id)                  -- By unique network ID
+local crate = Entities:getBy("type", "Crate") -- By field match
+```
 
 ```lua
 local open = Entities:getAllBy("state", function(state) return state.open end)
@@ -42,28 +47,6 @@ if crates and #crates > 0 then
     print(crates.id.." is a Crate!")
 end
 ```
-
-***
-
-## 📦 Object Script Tracking
-
-All object instances are stored in the **Entities singleton**:
-
-```lua
-Entities = new EntitiesSingleton()
-```
-
-Each object is uniquely identified by its `uNetId`
-
-You can fetch or query entities at runtime:
-
-```lua
-local obj = Entities:get(id)                  -- By unique network ID
-local crate = Entities:getBy("type", "Crate") -- By field match
-```
-
-<mark style="color:blue;">`CLIENT`</mark> for an object to be available in the entities list, it must be rendered.\
-<mark style="color:red;">`SERVER`</mark> always fully populated, allow to access or manipulate any object, no matter where it is in the world.
 
 ***
 
