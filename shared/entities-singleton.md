@@ -8,16 +8,33 @@
 All live entity instances are tracked in the `Entities` singleton.\
 Each object is uniquely identified by its `uNetId`
 
-#### Methods provided
+***
 
-| Function                                                             | Description                                                                                                        |
-| -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| <mark style="color:$warning;">`Entities:get(id)`</mark>              | Fetch a object instance from its uNetId                                                                            |
-| <mark style="color:$warning;">`Entities:getBy(key, value)`</mark>    | Find an instance by a custom field, value can also be a function working as a filter                               |
-| <mark style="color:$warning;">`Entities:getAllBy(key, value)`</mark> | Returns a table containing all instances that respect the filter, value can also be a function working as a filter |
-| <mark style="color:$primary;">`Entities:createByName(name)`</mark>   | Instantiate a new object of a class with that name                                                                 |
+### \</> API Reference
 
-Example:
+#### <mark style="color:$warning;">Entities:get(id)</mark>
+
+Fetch a object instance from its uNetId
+
+#### <mark style="color:$warning;">Entities:waitFor(id, timeout? = 5000)</mark>
+
+Continuously try to fetch a object instance from its uNetId until found or timeout
+
+#### <mark style="color:$warning;">Entities:getBy(key, value)</mark>
+
+Find an instance by a custom field, value can also be a function working as a filter
+
+#### <mark style="color:$warning;">Entities:getAllBy(key, value)</mark>
+
+Returns a table containing all instances that respect the filter, value can also be a function working as a filter
+
+#### <mark style="color:$primary;">Entities:createByName(name)</mark>
+
+Instantiate a new object of a class with that name
+
+***
+
+### Examples:
 
 ```lua
 local obj = Entities:get(id)                  -- By unique network ID

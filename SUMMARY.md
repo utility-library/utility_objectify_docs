@@ -20,8 +20,9 @@
 
 ## Shared
 
-* [Entities Singleton](shared/entities-singleton.md)
+* [Child Entities](shared/child-entities.md)
 * [Decorators](shared/decorators.md)
+* [Entities Singleton](shared/entities-singleton.md)
 * [Hooks](shared/hooks.md)
 * [RPC](shared/rpc.md)
 * [Type of scripts](shared/type-of-scripts.md)

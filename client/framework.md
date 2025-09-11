@@ -15,8 +15,9 @@ All object scripts on the client extend the `BaseEntity` class. This class provi
 * Plugin management (`self.plugins`)
 * State listening via [#state-key-value](../shared/decorators.md#state-key-value "mention")
 * Event binding via [#event-eventname-ignorerendering](../shared/decorators.md#event-eventname-ignorerendering "mention")
+* Child Entities methods and attributes [child-entities.md](../shared/child-entities.md "mention")
 
-You should **never instantiate BaseEntity directly**. Instead, you define classes that inherit from it.
+You should **never bind a model to BaseEntity directly**. Instead, you define classes that inherit from it.
 
 ```lua
 class Crate extends BaseEntity {

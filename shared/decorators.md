@@ -18,19 +18,33 @@ You can also pass a table of models:
 class Crate extends BaseEntity {}
 ```
 
-When an entity with one of these models is rendered, an instance of the class will be created.
+#### Model Constructors <mark style="color:red;">`SERVER`</mark>
 
-{% hint style="warning" %}
-The abstract parameter is only required for the server
-{% endhint %}
+On the server, passing multiple models generates model-specific constructors.\
+This allows explicit control over which model is used when creating the entity:
 
-Setting `abstract = true` allows for the creation of abstract objects.\
-You can define a custom model name, and `utility_objectify` will generate both a new model and an object. This feature enables the creation of objects with custom models, allowing clients to add logic while benefiting from complete entity lifecycle management.\
-For example, you can create an object for an NPC spawning zone and manage its states or render/unrender capabilities without depending on a physical game model.
+```lua
+-- ✅ Explicit constructors
+new Crate.prop_crate_11e(...)
+new Crate.prop_boxpile_07d(...)
 
-{% hint style="info" %}
-To incorporate client logic, register the main script as a standard model, the handling will be automatic without the need for special configurations.
-{% endhint %}
+-- ✖️ Invalid: no model provided
+new Crate(...)
+```
+
+#### Abstract parameter <mark style="color:red;">`SERVER`</mark>
+
+Passing `abstract = true` marks the class as abstract.\
+Useful for logic-only objects or custom entity types, for example, NPC spawn zones or render/unrender managers:
+
+```lua
+@model("npc_spawn_zone", true)
+class SpawnZone extends BaseEntity {}
+```
+
+`utility_objectify`, from the provided model name generates the model and its corresponding object, while keeping full entity lifecycle management.
+
+Client logic works automatically, no special setup needed.
 
 ***
 

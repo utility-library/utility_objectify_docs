@@ -69,7 +69,7 @@ can interact with the temporary instance properties, as they will be injected be
 
 ***
 
-## 🔎 Object Management Functions
+## \</> API Reference
 
 ### <mark style="color:purple;">IsObjectScriptRegistered(model, name)</mark>
 

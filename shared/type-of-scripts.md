@@ -8,13 +8,16 @@ Every main script instance has:
 
 {% tabs %}
 {% tab title="Client side" %}
-| Name           | Description                                                                       |
-| -------------- | --------------------------------------------------------------------------------- |
-| `self.id`      | The uNetId (UtilityNet id) of the current entity                                  |
-| `self.obj`     | The GTA entity handle of the current entity                                       |
-| `self.state`   | The object state bag, read-only (client)                                          |
-| `self.plugins` | <p>A table with every plugin instance<br><code>[scriptName] = instance</code></p> |
-| `self.server`  | Used to call server-side entity RPC functions                                     |
+| Name            | Description                                                                                                                                              |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `self.id`       | The uNetId (UtilityNet id) of the current entity                                                                                                         |
+| `self.obj`      | The GTA entity handle of the current entity                                                                                                              |
+| `self.state`    | The object state bag, read-only (client)                                                                                                                 |
+| `self.plugins`  | <p>A table with every plugin instance<br><code>[scriptName] = instance</code></p>                                                                        |
+| `self.server`   | Used to call server-side entity RPC functions                                                                                                            |
+| `self.parent`   | <p>The parent when attached</p><p><a data-mention href="child-entities.md">child-entities.md</a></p>                                                     |
+| `self.root`     | The top most parent when attached[child-entities.md](child-entities.md "mention")                                                                        |
+| `self.children` | <p>A table with every attached children</p><p><code>[childName] = child</code></p><p><a data-mention href="child-entities.md">child-entities.md</a> </p> |
 {% endtab %}
 
 {% tab title="Server side" %}

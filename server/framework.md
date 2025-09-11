@@ -6,7 +6,7 @@ This page details how the server-side framework works and how to write server-si
 
 ***
 
-### 🧱 BaseEntity Class
+## 🧱 BaseEntity Class
 
 All server-side object scripts must **extend `BaseEntity`**. This class provides:
 
@@ -15,9 +15,27 @@ All server-side object scripts must **extend `BaseEntity`**. This class provides
 * Entity deletion (`:destroy`)
 * RPC access to the client (`self.client`)
 * Plugin management (`self.plugins`)
+* Child Entities methods and attributes [child-entities.md](../shared/child-entities.md "mention")
 * Lifecycle hooks like [#onspawn](../shared/hooks.md#onspawn "mention"),[#ondestroy](../shared/hooks.md#ondestroy "mention") etc.
 
-#### Example
+### Methods provided
+
+<details>
+
+<summary>General</summary>
+
+#### <mark style="color:purple;">self:create(coords)</mark>
+
+Spawns a networked object in the world, automatically called when passing coords during class instantiation.\
+calls [#onawake](../shared/hooks.md#onawake "mention"), [#onspawn](../shared/hooks.md#onspawn "mention") and [#afterspawn](../shared/hooks.md#afterspawn "mention")
+
+#### <mark style="color:purple;">self:destroy()</mark>
+
+Deletes the entity and removes the instance calling [#ondestroy](../shared/hooks.md#ondestroy "mention")
+
+</details>
+
+### Example
 
 ```lua
 @model("prop_box_wood02a")
@@ -30,14 +48,6 @@ class Crate extends BaseEntity {
 -- Spawning in the world
 local myCrate = new Crate(vec3(0, 0, 72))
 ```
-
-Functions provided by `BaseEntity`
-
-| Function               | Description                                                                                                   |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------- |
-| `self:create(coords)`  | Spawns a networked object in the world, automatically called when passing coords when instantiating the class |
-| `self:destroy()`       | Deletes the entity and removes the instance                                                                   |
-| `self:init(id, state)` | <mark style="color:orange;">`INTERNAL`</mark> Initializes lifecycle methods on existing entity                |
 
 ***
 
