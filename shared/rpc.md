@@ -30,6 +30,10 @@ Every `BaseEntity` instance gets a `self.client` property that acts as a proxy t
 ```lua
 self.client:OpenLid(clientId)
 self.client.plugins.lootable:GiveLoot(clientId, playerId)
+
+
+self.client.await:OpenLid(clientId)
+self.client.await.plugins.lootable:GiveLoot(clientId, playerId)
 ```
 
 Internally, metatables route calls based on:
@@ -39,6 +43,12 @@ Internally, metatables route calls based on:
 * The class or plugin type
 
 RPC methods must be defined with [#rpc-return](decorators.md#rpc-return "mention") on the **client**.
+
+{% hint style="info" %}
+`clientId` can also be **-1** to call the method for **all currently rendering clients**
+
+for callbacks (await) this will return a dictionary of `clientId = {returns}`
+{% endhint %}
 {% endtab %}
 {% endtabs %}
 
@@ -61,13 +71,17 @@ You can also call **non-object-based RPCs** from the server using the global **C
 These are typically utility methods not bound to a specific entity.
 
 ```lua
-local data = Client.GetPlayerStats(clientId, ...)
+Client.GetPlayerStats(clientId, ...)
+
+local data = Client.await.GetPlayerStats(clientId, ...)
 ```
 
 They can still be a callback or fire-and-forget style like entity based RPCs
 
 {% hint style="info" %}
-clientId can also be -1 to call the method on all clients
+`clientId` can also be **-1** to call the method on **all clients**
+
+for callbacks (await) this will return a dictionary of `clientId = {returns}`
 {% endhint %}
 {% endtab %}
 {% endtabs %}

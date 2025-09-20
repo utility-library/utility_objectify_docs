@@ -48,6 +48,87 @@ Client logic works automatically, no special setup needed.
 
 ***
 
+### <mark style="color:purple;">@vehicle(modelName)</mark>
+
+<mark style="color:blue;">`CLIENT`</mark> <mark style="color:red;">`SERVER`</mark>
+
+Register the following class as [#main-script](../client/object-management.md#main-script "mention") of the specified model.\
+can be used only on classes that extends [#baseentityonesync](baseentityonesync.md#baseentityonesync "mention")
+
+```lua
+@vehicle("t20")
+class MyCar extends BaseEntityOneSync {}
+```
+
+You can also pass a table of models:&#x20;
+
+```lua
+@vehicle({ "t20", "bati" })
+class MyCar extends BaseEntityOneSync {}
+```
+
+#### Model Constructors <mark style="color:red;">`SERVER`</mark>
+
+Are supported like [#model-modelname-abstract](decorators.md#model-modelname-abstract "mention")
+
+***
+
+### <mark style="color:purple;">@ped(modelName)</mark>
+
+<mark style="color:blue;">`CLIENT`</mark> <mark style="color:red;">`SERVER`</mark>
+
+Register the following class as [#main-script](../client/object-management.md#main-script "mention") of the specified model.\
+can be used only on classes that extends [#baseentityonesync](baseentityonesync.md#baseentityonesync "mention")
+
+```lua
+@ped("a_f_m_beach_01")
+class MyPed extends BaseEntityOneSync {}
+```
+
+You can also pass a table of models:&#x20;
+
+```lua
+@vehicle({ "a_f_m_beach_01", "a_f_m_bevhills_01" })
+class MyPed extends BaseEntityOneSync {}
+```
+
+#### Model Constructors <mark style="color:red;">`SERVER`</mark>
+
+Are supported like [#model-modelname-abstract](decorators.md#model-modelname-abstract "mention")
+
+***
+
+### <mark style="color:purple;">@object(modelName)</mark>
+
+<mark style="color:blue;">`CLIENT`</mark> <mark style="color:red;">`SERVER`</mark>
+
+Register the following class as [#main-script](../client/object-management.md#main-script "mention") of the specified model.\
+can be used only on classes that extends [#baseentityonesync](baseentityonesync.md#baseentityonesync "mention")
+
+```lua
+@object("prop_crate_11e")
+class MyObject extends BaseEntityOneSync {}
+```
+
+You can also pass a table of models:&#x20;
+
+```lua
+@vehicle({ "prop_crate_11e", "prop_boxpile_07d" })
+class MyObject extends BaseEntityOneSync {}
+```
+
+#### Model Constructors <mark style="color:red;">`SERVER`</mark>
+
+Are supported like [#model-modelname-abstract](decorators.md#model-modelname-abstract "mention")
+
+{% hint style="warning" %}
+OneSync only supports up to 80 locally created entities at once, and the base game already uses a large share of that limit.\
+Because of this, relying on this kind of entity decorator isn’t very reliable.\
+Unless you specifically require this type of entity, i strongly recommend using UtilityNet entities as usual (with [#model-modelname-abstract](decorators.md#model-modelname-abstract "mention"))
+{% endhint %}
+
+***
+
 ### <mark style="color:purple;">@plugin(pluginName)</mark>
 
 <mark style="color:blue;">`CLIENT`</mark> <mark style="color:red;">`SERVER`</mark>

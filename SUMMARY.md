@@ -26,3 +26,4 @@
 * [Hooks](shared/hooks.md)
 * [RPC](shared/rpc.md)
 * [Type of scripts](shared/type-of-scripts.md)
+* [BaseEntityOneSync](shared/baseentityonesync.md)
