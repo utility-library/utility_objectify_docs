@@ -53,7 +53,7 @@ Client logic works automatically, no special setup needed.
 <mark style="color:blue;">`CLIENT`</mark> <mark style="color:red;">`SERVER`</mark>
 
 Register the following class as [#main-script](../client/object-management.md#main-script "mention") of the specified model.\
-can be used only on classes that extends [#baseentityonesync](baseentityonesync.md#baseentityonesync "mention")
+can be used only on classes that extends [#baseentityonesync](fivem-onesync-entities.md#baseentityonesync "mention")
 
 ```lua
 @vehicle("t20")
@@ -78,7 +78,7 @@ Are supported like [#model-modelname-abstract](decorators.md#model-modelname-abs
 <mark style="color:blue;">`CLIENT`</mark> <mark style="color:red;">`SERVER`</mark>
 
 Register the following class as [#main-script](../client/object-management.md#main-script "mention") of the specified model.\
-can be used only on classes that extends [#baseentityonesync](baseentityonesync.md#baseentityonesync "mention")
+can be used only on classes that extends [#baseentityonesync](fivem-onesync-entities.md#baseentityonesync "mention")
 
 ```lua
 @ped("a_f_m_beach_01")
@@ -103,7 +103,7 @@ Are supported like [#model-modelname-abstract](decorators.md#model-modelname-abs
 <mark style="color:blue;">`CLIENT`</mark> <mark style="color:red;">`SERVER`</mark>
 
 Register the following class as [#main-script](../client/object-management.md#main-script "mention") of the specified model.\
-can be used only on classes that extends [#baseentityonesync](baseentityonesync.md#baseentityonesync "mention")
+can be used only on classes that extends [#baseentityonesync](fivem-onesync-entities.md#baseentityonesync "mention")
 
 ```lua
 @object("prop_crate_11e")
