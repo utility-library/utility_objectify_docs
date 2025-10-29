@@ -59,3 +59,16 @@ To help with shared or conditional logic, **Utility Objectify** provides two con
 | ---------- | ------- | ---------------------------- |
 | `IsClient` | `false` | Always `false` on the server |
 | `IsServer` | `true`  | Always `true` on the server  |
+
+***
+
+## 🔎 Framework Functions
+
+### <mark style="color:purple;">SetRPCNamespace(namespace)</mark>
+
+Change the prefix used internally for RPC event names\
+by default is `Config.Namespace` or the `current resource name` followed by a colon (:)
+
+### <mark style="color:purple;">Client.DisableTimeoutForNext()</mark>
+
+Disable the 5s timeout on callbacks for the next RPC call
