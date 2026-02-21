@@ -16,9 +16,9 @@ Each object is uniquely identified by its `uNetId`
 
 Fetch a object instance from its uNetId
 
-#### <mark style="color:$warning;">Entities:waitFor(id, timeout? = 5000)</mark>
+#### <mark style="color:$warning;">Entities:waitFor(</mark><mark style="color:$warning;">caller: BaseEntity,</mark> <mark style="color:$warning;">id, timeout? = 5000)</mark>
 
-Continuously try to fetch a object instance from its uNetId until found or timeout
+Continuously try to fetch a object instance from its uNetId until found or timeout, require the caller entity
 
 #### <mark style="color:$warning;">Entities:getBy(key, value)</mark>
 
