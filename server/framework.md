@@ -35,6 +35,35 @@ Deletes the entity and removes the instance calling [#ondestroy](../shared/hooks
 
 </details>
 
+<details>
+
+<summary>Coords/Rotation</summary>
+
+#### <mark style="color:purple;">self:</mark><mark style="color:purple;">getCoords</mark><mark style="color:purple;">()</mark>
+
+Returns the current world coordinates (position) of the object as a `vec3`.
+
+#### <mark style="color:purple;">self:getCoordsOffset(offset: vec3)</mark>
+
+Takes a local offset (`vec3`) and applies it relative to the object’s current position and rotation.\
+Returns the resulting world coordinates after the offset is applied.
+
+#### <mark style="color:purple;">self:setCoords(coords: vec3)</mark>
+
+Sets the object’s position in the world to the given `vec3` coordinates.
+
+#### <mark style="color:purple;">self:getRotation()</mark>
+
+Returns the current rotation of the object `vec3`
+
+#### <mark style="color:purple;">self:setRotation(rotation: vec3)</mark>
+
+Sets the object’s rotation to the given value `vec3`
+
+
+
+</details>
+
 ### Example
 
 ```lua
