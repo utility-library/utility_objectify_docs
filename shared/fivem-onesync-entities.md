@@ -26,6 +26,14 @@ To work with OneSync entities, you’ll extend the **`BaseEntityOneSync`** class
 You NEED to attach also a client script to make BaseEntityOneSync entities works
 {% endhint %}
 
+### Coords, rotation and attachments
+
+A OneSync entity is made of the UtilityNet entity (`self.id`) and the networked entity (`self.obj`). The methods below keep both in sync:
+
+* `self:setCoords(coords)` and `self:setRotation(rotation)` also move the networked entity
+* `self:attachTo(...)` attaches the networked entity as well, the client controlling it applies the `__attached` state, so it also works for clients that render the entity later
+* `self:detach()` detaches the networked entity and attaches the UtilityNet entity back to it
+
 Lets create an entity that use the `t20` as model:
 
 ```lua

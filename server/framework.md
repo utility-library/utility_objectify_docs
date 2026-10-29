@@ -60,7 +60,34 @@ Returns the current rotation of the object `vec3`
 
 Sets the object’s rotation to the given value `vec3`
 
+</details>
 
+<details>
+
+<summary>Attach/Detach</summary>
+
+#### <mark style="color:purple;">self:attachTo(target: BaseEntity | number, bone?: number, pos?: vec3, rot?: vec3, options?: table)</mark>
+
+Attaches the entity to another one.
+
+* `target`: a `BaseEntity` (attached through its UtilityNet id) or a number (attached through a FiveM **netId**, e.g. a player ped)
+* `bone`: defaults to `0`
+* `pos` / `rot`: offset and rotation, default to `vec3(0, 0, 0)`
+* `options`: `useSoftPinning` (`false`), `collision` (`false`), `rotationOrder` (`1`), `syncRot` (`true`)
+
+The attachment is replicated through the `__attached` state, so clients that render the entity later receive it too.
+
+```lua
+cargo:attachTo(playerPedNetId, 0, vec3(0.0, 0.0, 0.0), vec3(0.0, 0.0, 0.0))
+```
+
+#### <mark style="color:purple;">self:detach()</mark>
+
+Detaches the entity, its last attached position becomes its new coords.
+
+{% hint style="info" %}
+On [`BaseEntityOneSync`](../shared/fivem-onesync-entities.md) entities the client that controls the networked entity attaches/detaches the real entity as well. After `detach()` the UtilityNet entity is attached back to its own networked entity.
+{% endhint %}
 
 </details>
 
